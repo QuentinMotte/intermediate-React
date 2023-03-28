@@ -1,3 +1,7 @@
-h1 {
-  color: blue;
+@import '../../styles/variables';
+
+.home-container {
+  h1 {
+    color: $primary-color;
+  }
 }
