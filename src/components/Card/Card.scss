@@ -1,0 +1,12 @@
+@import '../../styles/variables';
+
+.card-container {
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+
+  img {
+    height: 80px;
+    width: 80px;
+  }
+}

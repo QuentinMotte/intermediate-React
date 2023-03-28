@@ -1,2 +1,2 @@
-import Freelancers from './Freelancers'
-export { Freelancers }
+import Freelances from './Freelances'
+export { Freelances }
