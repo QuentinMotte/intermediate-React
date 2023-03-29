@@ -4,7 +4,8 @@ $success-color: #28a745;
 $error-color: #dc3545;
 $warning-color: #ffc107;
 $info-color: #17a2b8;
-$backgroundLight: #f9f9fc;
+$backgroundLight: #d6d6da;
+$background: #f1f1f1;
 $backgroundDark: #1e1e2f;
 $font-family: 'Roboto', sans-serif;
 
@@ -23,7 +24,7 @@ $font-family: 'Roboto', sans-serif;
 }
 
 .light-theme {
-  background: $backgroundLight;
+  background: $background;
   color: black;
 }
 
