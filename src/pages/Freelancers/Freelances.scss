@@ -6,8 +6,33 @@
     gap: 24px;
     grid-template-rows: 350px 350px;
     grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    justify-items: center;
   }
   h1 {
-    color: $primary-color;
+    font-size: 30px;
+    color: black;
+    text-align: center;
+    padding-bottom: 30px;
+  }
+  h2 {
+    font-size: 20px;
+    color: $secondary-color;
+    font-weight: 300;
+    text-align: center;
+    padding-bottom: 30px;
+  }
+  .loader-wrapper {
+    display: flex;
+    justify-content: center;
+    .loader {
+      padding: 10px;
+      border: 6px solid $primary-color;
+      border-bottom-color: transparent;
+      border-radius: 22px;
+      animation: rotate 1s infinite linear;
+      height: 0;
+      width: 0;
+    }
   }
 }

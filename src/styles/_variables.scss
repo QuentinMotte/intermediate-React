@@ -10,6 +10,15 @@ $backgroundLight: #f9f9fc;
 // fonts variables
 $font-family: 'Roboto', sans-serif;
 
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 * {
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
     'Lucida Sans', Arial, sans-serif;
