@@ -15,9 +15,9 @@ const Card = ({
 }: CardProps) => {
   return (
     <div className="card-container">
-      <span>{label}</span>
+      <span className="label">{label}</span>
       <img src={picture} alt="freelancers" height={80} width={80} />
-      <span>{title}</span>
+      <span className="title">{title}</span>
     </div>
   )
 }

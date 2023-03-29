@@ -1,7 +1,31 @@
 @import '../../styles/variables';
 
-.home-container {
-  h1 {
-    color: $primary-color;
+.home-wrapper {
+  display: flex;
+  justify-content: center;
+  .home-container {
+    margin: 30px;
+    background-color: $backgroundLight;
+    padding: 60px 90px;
+    display: flex;
+    flex-direction: row;
+    max-width: 1200px;
+    .left-column {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      flex: 1;
+      h2 {
+        padding-bottom: 30px;
+        max-width: 280px;
+        line-height: 50px;
+      }
+      .link {
+        max-width: 250px;
+      }
+    }
+    img {
+      flex: 1;
+    }
   }
 }

@@ -21,13 +21,15 @@ const Freelances = () => {
   return (
     <div className="freelances-container">
       <h1>Freelances 👩‍💻👨‍💻👩‍💻</h1>
-      {freelancerProfiles.map((profile, index) => (
-        <Card
-          key={`${profile.name}-${index}`}
-          label={profile.jobTitle}
-          title={profile.name}
-        />
-      ))}
+      <div className="cards-container">
+        {freelancerProfiles.map((profile, index) => (
+          <Card
+            key={`${profile.name}-${index}`}
+            label={profile.jobTitle}
+            title={profile.name}
+          />
+        ))}
+      </div>
     </div>
   )
 }

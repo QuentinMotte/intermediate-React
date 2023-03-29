@@ -1,18 +1,28 @@
 // color variables
-$primary-color: #4f535a;
-$secondary-color: #b3bec7;
+$primary-color: #5843e4;
+$secondary-color: #8186a0;
 $success-color: #28a745;
 $error-color: #dc3545;
 $warning-color: #ffc107;
 $info-color: #17a2b8;
+$backgroundLight: #f9f9fc;
 
 // fonts variables
 $font-family: 'Roboto', sans-serif;
 
 * {
-  font-family: $font-family;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+    'Lucida Sans', Arial, sans-serif;
 }
 
 body {
-  background: $secondary-color;
+  background: $backgroundLight;
+}
+
+.link {
+  padding: 10px 15px;
+  color: #8186a0;
+  text-decoration: none;
+  font-size: 18px;
+  text-align: center;
 }
