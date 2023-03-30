@@ -1,9 +1,9 @@
-import React, { useEffect, useContext } from 'react'
+import React, { useContext } from 'react'
 import './Survey.scss'
 
 import { useParams, Link } from 'react-router-dom'
 import { SurveyContext } from '../../utils/context'
-import { useFecth } from '../../utils/hooks'
+import { useFetch } from '../../utils/hooks'
 
 const Survey = () => {
   const { questionNumber } = useParams()
@@ -11,7 +11,7 @@ const Survey = () => {
   const prevQuestionNumber = questionNumberInt === 1 ? 1 : questionNumberInt - 1
   const nextQuestionNumber = questionNumberInt + 1
 
-  const { data, loading, error }: any = useFecth(`http://localhost:8000/survey`)
+  const { data, loading, error }: any = useFetch(`http://localhost:8000/survey`)
   const { surveyData }: any = data
 
   const { answers, saveAnswers } = useContext(SurveyContext)

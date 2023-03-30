@@ -7,7 +7,7 @@ const Footer = () => {
   return (
     <footer className="footer-container">
       <button onClick={() => toggleTheme()} className="color-theme-btn">
-        Switch mode : {theme === 'light' ? '☀️' : '🌙'}
+        {theme === 'light' ? 'Switch mode : ☀️' : 'Switch mode : 🌙'}
       </button>
     </footer>
   )
