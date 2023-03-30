@@ -1,3 +1,6 @@
+## https://openclassrooms.com/fr/courses/7315991-intermediate-react 
+ - typescript - sass 
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
