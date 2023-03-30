@@ -11,6 +11,7 @@ import { Error } from './components/Error'
 import { Footer } from './components/Footer'
 
 import { ThemeContext } from './utils/context/index'
+import { Profile } from './pages/Profile'
 
 const App = () => {
   const { theme } = useContext(ThemeContext)
@@ -24,6 +25,7 @@ const App = () => {
           <Route path="/survey/:questionNumber" element={<Survey />} />
           <Route path="/results" element={<Results />} />
           <Route path="/freelancers" element={<Freelances />} />
+          <Route path="/profile/:id" element={<Profile />} />
           <Route path="*" element={<Error />} />
         </Routes>
         <Footer />

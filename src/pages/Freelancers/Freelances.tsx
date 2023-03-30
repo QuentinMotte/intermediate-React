@@ -1,6 +1,7 @@
 import './Freelances.scss'
 import { Card } from '../../components/Card'
 import { useFetch } from '../../utils/hooks'
+import { Link } from 'react-router-dom'
 
 const Freelances = () => {
   const { data, loading, error }: any = useFetch(
@@ -25,12 +26,14 @@ const Freelances = () => {
       ) : (
         <div className="cards-container">
           {freelancers.map((profile: any, index: any) => (
-            <Card
-              key={`${profile.name}-${index}`}
-              label={profile.job}
-              title={profile.name}
-              picture={profile.picture}
-            />
+            <Link key={`freelance-${profile.id}`} to={`/profile/${profile.id}`}>
+              <Card
+                key={`${profile.name}-${index}`}
+                label={profile.job}
+                title={profile.name}
+                picture={profile.picture}
+              />
+            </Link>
           ))}
         </div>
       )}

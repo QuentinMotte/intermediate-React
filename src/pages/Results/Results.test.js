@@ -1,12 +1,12 @@
 import Results, { formatJobList, formatQueryParams } from './Results'
-import { rest } from 'msw'
-import { setupServer } from 'msw/node'
-import {
-  waitForElementToBeRemoved,
-  screen,
-  waitFor,
-} from '@testing-library/react'
-import { render } from '../../utils/test'
+// import { rest } from 'msw'
+// import { setupServer } from 'msw/node'
+// import {
+//   waitForElementToBeRemoved,
+//   screen,
+//   waitFor,
+// } from '@testing-library/react'
+// import { render } from '../../utils/test'
 
 describe('The formatJobList function', () => {
   it('should add a comma to a word', () => {
