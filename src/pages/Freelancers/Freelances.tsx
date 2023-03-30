@@ -20,7 +20,7 @@ const Freelances = () => {
       {error && <div className="error">{error}</div>}
       {loading ? (
         <div className="loader-wrapper">
-          <div className="loader"></div>
+          <div data-testid="loader" className="loader"></div>
         </div>
       ) : (
         <div className="cards-container">

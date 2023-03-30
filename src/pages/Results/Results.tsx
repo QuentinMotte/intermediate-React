@@ -4,16 +4,6 @@ import { SurveyContext } from '../../utils/context'
 import { useFetch } from '../../utils/hooks'
 import { Link } from 'react-router-dom'
 
-function formatFetchParams(answers: any) {
-  const answerNumbers = Object.keys(answers)
-
-  return answerNumbers.reduce((previousParams, answerNumber, index) => {
-    const isFirstParam = index === 0
-    const separator = isFirstParam ? '' : '&'
-    return `${previousParams}${separator}a${answerNumber}=${answers[answerNumber]}`
-  }, '')
-}
-
 export function formatJobList(title: any, listLength: any, index: any) {
   if (index === listLength - 1) {
     return title
@@ -46,7 +36,7 @@ const Results = () => {
   const resultsData = data?.resultsData
   return isLoading ? (
     <div className="loader-wrapper">
-      <div className="loader"></div>
+      <div data-testid="loader" className="loader"></div>
     </div>
   ) : (
     <div className="results-container">
@@ -70,8 +60,10 @@ const Results = () => {
               className="job-description"
               key={`result-detail-${index}-${result.title}`}
             >
-              <span className="job-title">{result.title}</span>
-              <p>{result.description}</p>
+              <span className="job-title" data-testid="job-title">
+                {result.title}
+              </span>
+              <p data-testid="job-description">{result.description}</p>
             </div>
           ))}
       </div>

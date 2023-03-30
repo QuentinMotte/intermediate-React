@@ -18,7 +18,7 @@ export function useFetch(url) {
 
         setData(data)
       } catch (err) {
-        console.log(err)
+        // console.log(err)
 
         setError(true)
       } finally {
