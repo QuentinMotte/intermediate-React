@@ -1,7 +1,9 @@
 ## https://openclassrooms.com/fr/courses/7315991-intermediate-react 
 
 -> made with : 
- - typescript - functionnal component - class component - custom hook - test (jest/ React testing library/ msw) - sass - state management with React Context
+ - typescript - functionnal component - class component - custom hook - test (jest/ React testing library/ msw) - sass - state management with React Context  
+   
+ definitively need to improve the style one day :D
  
 # Getting Started with Create React App
 
