@@ -1,13 +1,9 @@
-import React, { useEffect, useState, useContext } from 'react'
+import React, { useEffect, useContext } from 'react'
 import './Survey.scss'
 
 import { useParams, Link } from 'react-router-dom'
-import axios from 'axios'
 import { SurveyContext } from '../../utils/context'
-
-interface SurveyData {
-  [key: number]: string
-}
+import { useFecth } from '../../utils/hooks'
 
 const Survey = () => {
   const { questionNumber } = useParams()
@@ -15,38 +11,25 @@ const Survey = () => {
   const prevQuestionNumber = questionNumberInt === 1 ? 1 : questionNumberInt - 1
   const nextQuestionNumber = questionNumberInt + 1
 
-  const [surveyData, setSurveyData] = useState<SurveyData>({})
-  const [isDataLoading, setDataLoading] = useState(false)
-  const [error, setError] = useState<string | null>(null)
+  const { data, loading, error }: any = useFecth(`http://localhost:8000/survey`)
+  const { surveyData }: any = data
+
   const { answers, saveAnswers } = useContext(SurveyContext)
 
-  function saveReply(answer: boolean) {
+  function saveReply(answer: any) {
     saveAnswers({ [questionNumberInt]: answer })
   }
 
-  const fetchSurveyData = async () => {
-    setDataLoading(true)
-    try {
-      const response = await axios.get('http://localhost:8000/survey')
-      setSurveyData(response.data.surveyData)
-      setDataLoading(false)
-    } catch (err: any) {
-      setError(err.message)
-    }
+  if (error) {
+    return <span>There is a problem</span>
   }
-
-  useEffect(() => {
-    fetchSurveyData()
-  }, [])
-
   return (
     <div className="survey-container">
-      {error && <div className="error">{error}</div>}
       <h2>Question {questionNumber}</h2>
-      {isDataLoading ? (
+      {loading ? (
         <div className="loader"></div>
       ) : (
-        <span>{surveyData[questionNumberInt]}</span>
+        <span>{surveyData && surveyData[questionNumberInt]}</span>
       )}
       <div className="btn-wrapper">
         <button
@@ -68,7 +51,7 @@ const Survey = () => {
       </div>
       <div className="link-wrapper">
         <Link to={`/survey/${prevQuestionNumber}`}>Back</Link>
-        {surveyData[questionNumberInt + 1] ? (
+        {surveyData && surveyData[questionNumberInt + 1] ? (
           <Link to={`/survey/${nextQuestionNumber}`}>Next</Link>
         ) : (
           <Link to="/results">Results</Link>

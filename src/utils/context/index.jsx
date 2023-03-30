@@ -1,18 +1,8 @@
 import { createContext, useState } from 'react'
 
-interface ThemeContextType {
-  theme: string
-  toggleTheme: () => void
-}
+export const ThemeContext = createContext()
 
-interface SurveyContextType {
-  answers: { [key: number]: boolean }
-  saveAnswers: (newAnswers: boolean) => void
-}
-
-export const ThemeContext = createContext<ThemeContextType | null>(null)
-
-export const ThemeProvider = ({ children }: any) => {
+export const ThemeProvider = ({ children }) => {
   const [theme, setTheme] = useState('light')
   const toggleTheme = () => setTheme(theme === 'light' ? 'dark' : 'light')
 
@@ -23,11 +13,11 @@ export const ThemeProvider = ({ children }: any) => {
   )
 }
 
-export const SurveyContext = createContext<SurveyContextType | null>(null)
+export const SurveyContext = createContext()
 
-export const SurveyProvider = ({ children }: any) => {
+export const SurveyProvider = ({ children }) => {
   const [answers, setAnswers] = useState({})
-  const saveAnswers = (newAnswers: any) => {
+  const saveAnswers = (newAnswers) => {
     setAnswers({ ...answers, ...newAnswers })
   }
 
