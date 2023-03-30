@@ -1,6 +1,8 @@
 ## https://openclassrooms.com/fr/courses/7315991-intermediate-react 
- - typescript - sass 
 
+-> made with : 
+ - typescript - functionnal component - class component - custom hook - test (jest/ React testing library/ msw) - sass - state management with React Context
+ 
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
