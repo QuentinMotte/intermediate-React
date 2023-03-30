@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
+import './Profile.scss'
 
 interface ProfileData {
   picture: string
@@ -41,19 +42,27 @@ function Profile() {
   } = profileData
 
   return (
-    <div>
+    <div className="profile-container">
       <img src={picture} alt={name} height={150} width={150} />
-      <h1>{name}</h1>
-      <span>{location}</span>
-      <h2>{job}</h2>
-      <div>
-        {skills &&
-          skills.map((skill) => (
-            <div key={`skill-${skill}-${profileId}`}>{skill}</div>
-          ))}
+      <div className="profile-detail">
+        <div className="title-wrapper">
+          <h1>{name}</h1>
+          <span className="location">{location}</span>
+        </div>
+        <h2>{job}</h2>
+        <div className="skills">
+          {skills &&
+            skills.map((skill) => (
+              <div className="skill" key={`skill-${skill}-${profileId}`}>
+                {skill}
+              </div>
+            ))}
+        </div>
+        <div className="available">
+          {available ? 'Available immediately' : 'Unavailable'}
+        </div>
+        <span className="price">{tjm} € / day</span>
       </div>
-      <div>{available ? 'Available immediately' : 'Unavailable'}</div>
-      <span>{tjm} € / day</span>
     </div>
   )
 }

@@ -1,1 +1,55 @@
 @import '../../styles/variables';
+.profile-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 90px 0;
+  margin: 0 90px;
+  img {
+    height: 150px;
+    width: 150px;
+    border-radius: 75px;
+  }
+  .profile-detail {
+    display: flex;
+    flex-direction: column;
+    margin-left: 50px;
+
+    .title-wrapper {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      .location {
+        margin-left: 15px;
+      }
+      h1 {
+        font-size: 25px;
+        margin: 0;
+        font-weight: 500;
+      }
+    }
+    h2 {
+      padding-top: 10px;
+      font-size: 20px;
+      margin: 0;
+      font-weight: 500;
+    }
+    .price {
+      padding-top: 10px;
+      font-weight: 500;
+      font-size: 20px;
+    }
+    .skills {
+      display: flex;
+      flex-direction: row;
+      padding: 10px 0;
+      .skill {
+        border-radius: 5px;
+        padding: 5px;
+        margin-right: 5px;
+        border: 1px solid;
+      }
+    }
+  }
+}
